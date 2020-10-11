@@ -9,8 +9,8 @@ create database assignment;
 show databases;
 use assignment;
 
-# create table with name school
-create table school(Roll_Id smallint unsigned auto_increment primary key,
+# create table with name School
+create table School(Roll_Id smallint unsigned auto_increment primary key,
 	Last_Name varchar(15), 
 	First_Name varchar(15),
 	Age tinyint unsigned,
@@ -18,39 +18,41 @@ create table school(Roll_Id smallint unsigned auto_increment primary key,
 	Date_Birth date);
 
 show tables;
-describe school;
-select * from school;
+describe School;
+select * from School;
 
 # insert 5 records in that table
-insert into school(Last_Name, First_Name, Age, Gender, Date_Birth) values('Wallace', 'Christopher', 12, 'Male', '2008-10-12');
-insert into school(Last_Name, First_Name, Age, Gender, Date_Birth) values('Scully', 'Steven', 10, 'Male', '2010-09-17');
-insert into school(Last_Name, First_Name, Age, Gender, Date_Birth) values('Welker', 'Kristen', 11, 'Female', '2009-07-01');
-insert into school(Last_Name, First_Name, Age, Gender, Date_Birth) values('Page', 'Susan', 12, 'Female', '2008-02-12');
-insert into school(Last_Name, First_Name, Age, Gender, Date_Birth) values('Cooper', 'Anderson', 13, 'Male', '2007-06-03');
+insert into School(Last_Name, First_Name, Age, Gender, Date_Birth)
+	values('Wallace', 'Christopher', 12, 'Male', '2008-10-12'),
+	('Scully', 'Steven', 10, 'Male', '2010-09-17'),
+	('Welker', 'Kristen', 11, 'Female', '2009-07-01'),
+	('Page', 'Susan', 12, 'Female', '2008-02-12'),
+	('Cooper', 'Anderson', 13, 'Male', '2007-06-03');
 
-select * from school;
+select * from School;
 
 # rename Date_Birth to Date_of_Birth
-alter table school change Date_Birth Date_of_Birth;
+alter table School change Date_Birth Date_of_Birth date;
 
-select * from school;
+select * from School;
 
-# add column Date_of_Admission into the table school
-alter table school add column Date_of_Admission date;
+# add column Date_of_Admission into the table School
+alter table School add column Date_of_Admission date;
 
-select * from school;
+select * from School;
 
 # set and update column Date_of_Admission
-update school set Date_of_Admission = '2019-07-25' where 1 = 1;
+update School set Date_of_Admission = '2019-07-25' where 1 = 1;
 
-select * from school;
+select * from School;
 
-# truncate table school
-truncate table school;
+# truncate table School
+truncate table School;
 
-select * from school;
+show tables;
+select * from School;
 
-# drop table school
-drop table school;
+# drop table School
+drop table School;
 
 show tables;
